@@ -4,9 +4,60 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motors - Electric Golf Cart</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
 <body>
-    
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                 <a href="#">
+                    <img class="primary-icon" src="img/logo.png" alt="" >
+                </a>
+                <div class="logotext">motors</div>
+            </div>
+            <ul class="nav-list" id="navi-list">
+                <li class="list-item">
+                   <a href="#">About</a>
+                </li>
+                <li class="list-item">
+                    <a href="#">Team</a>
+                </li>
+                <li class="list-item">
+                    <a href="#">Buy Now</a>
+                </li>
+                <li class="list-item">
+                    <a href="#">Contact</a>
+                </li>
+            </ul>
+            <div class="menu" id="toggle-button">
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+                <div class="menu-line"></div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="parallax"></div>
+            <div class="main-text">
+                <h1>Electric Golf Cart</h1>
+                <p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed eget varius turpis. Praesent non metus turpis. Morbi lobortis sed arcu id mattis. Ut sed nibh id dui vulputate mollis eu congue nulla. Nunc elementum lacus nec nunc ultricies, nec pharetra felis lacinia. </p>
+            </div>
+            <!--<img class="main-image" src="img/pexels-mikhail-nilov-9207388.jpg" alt=""> -->
+        </section>
+        
+    </main>
 </body>
+<script>
+    const toggleButton = document.getElementById('toggle-button');
+    const naviList = document.getElementById('navi-list');
+
+    toggleButton.addEventListener('click', () => {
+        naviList.classList.toggle('active');
+    });
+</script>
 </html>
