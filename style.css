@@ -16,6 +16,12 @@ body {
     flex-direction: column;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
+/* -------------- links --------*/
+
 a {
     text-decoration: none;
     color: #FF6100;
@@ -25,23 +31,18 @@ a:hover {
     color: #9fb5cc;
 }
 
-body::-webkit-scrollbar {
-    display: none;
-}
+/* ------------ header ------------*/
 
 header {
     background-color: rgba(255, 255, 255, 0.75);
     color: #FF6100;
-    position: fixed;
-    top: 0;
     height: 80px;
-    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 64px;
     font-size: 16px;
-    position: relative;
+    z-index: 1;
 }
 
 header h1 {
@@ -76,26 +77,67 @@ header h1 {
     color: #9fb5cc;
 }
 
+/*  -----   sticky nav ---- */
+/* Style the navbar */
+#navbar {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  /* Navbar links */
+  #navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    text-decoration: none;
+  }
+  
+  /* Page content
+  .main {
+    padding: 16px;
+  }
+   */
+  
+  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
+  /* 
+  Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) 
+  .sticky + .main {
+    padding-top: 60px;
+  } 
+  */
+
+/* ---------- main -------------*/
+
 .main {
     flex: 1;
     display: flex;
     width: 100%;
     align-items: center;
-    padding: 90px 0px 90px 0px;
+    padding: 80px 0px ;
+    flex-direction: row-reverse;
 }
 
-.right img {
+.right-main img {
     width: 100%;
 }
 
-.left {
+.right-main {
+    max-width: 50%;
+}
+
+.left-main {
     width: 50%;
     padding: 28px 64px;
 }
 
-.right {
-    max-width: 50%;
-}
+
 
 .title {
     color: #FF6100;
@@ -134,6 +176,9 @@ button.cta:hover {
     opacity: 0.9;
 }
 
+
+/* ------ product ----------*/
+
 .product {
     background: #fff;
     width: auto;
@@ -162,6 +207,8 @@ button.cta:hover {
     max-width: 100%;
 }
 
+/*--------- about ----------*/
+
 .about {
     flex: 1;
     display: flex;
@@ -179,6 +226,7 @@ button.cta:hover {
     padding: 14px 64px;
 }
 
+
 .title-about {
     color: #FF6100;
     font-size: 1.6em;
@@ -195,6 +243,8 @@ button.cta:hover {
     line-height: 28px;
     margin-bottom: 24px;
 }
+
+/*---------- contact -----------*/
 
 .contact {
     flex: 1;
@@ -215,6 +265,8 @@ button.cta:hover {
 .right-contact {
     width: 50%;
 }
+
+/*------- footer --------*/
 
 footer {
     background-color: #FF6100;
@@ -237,39 +289,7 @@ footer h1 {
     letter-spacing: 1px;
 }
 
-/*  -----   sticky nav ---- */
-/* Style the navbar */
-#navbar {
-    overflow: hidden;
-    background-color: #333;
-  }
-  
-  /* Navbar links */
-  #navbar a {
-    float: left;
-    display: block;
-    color: #f2f2f2;
-    text-align: center;
-    padding: 14px;
-    text-decoration: none;
-  }
-  
-  /* Page content */
-  .content {
-    padding: 16px;
-  }
-  
-  /* The sticky class is added to the navbar with JS when it reaches its scroll position */
-  .sticky {
-    position: fixed;
-    top: 0;
-    width: 100%;
-  }
-  
-  /* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
-  .sticky + .content {
-    padding-top: 60px;
-  }
+
 
 
 /*  -----    CONTACT FORM      -----  */
@@ -320,19 +340,35 @@ input[type=text], select, textarea{
 
 /*  -----    RESPONSIVENESS    -----  */
 
-@media (max-width:800px) {
-    header,
-    footer,
-    .left {
-        padding-left: 30px;
-        padding-right: 30px;
+@media (max-width:480px) {
+
+    .main {
+        padding: 50px 0;
+    }
+
+    .left
+
+    .main,
+    .product {
+        flex-direction: column;
+    }
+
+    .left button.cta {
+        display: none;
+    }
+
+    .product {
+        padding: 0 10px;
     }
 
 
-}
 
-
-@media (max-width: 650px) {
+    header,
+    footer,
+    .left {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
 
     h1 {
         color: #FF6100!important;
@@ -341,7 +377,7 @@ input[type=text], select, textarea{
     footer h1 {
         color: #fff!important;
     }
-    
+
     a {
         text-decoration: none;
         color: #fff;
@@ -356,16 +392,17 @@ input[type=text], select, textarea{
         flex-direction: column;
     }
 
+
     .left,
     .card,
     .contact {
         width: 100%;
         max-width: 100%;
-        padding: 12px;
         display: flex;
         flex-direction: column;
         align-items: center;
     }
+
 
     .left,
     .card {
@@ -374,22 +411,25 @@ input[type=text], select, textarea{
 
     .left,
     .card * {
-        width: 95%;
         margin-bottom: 32px;
         text-align: center;
     }
 
-    button.cta {
-        max-width: 60%;
-    }
 
     .card img {
-        width: 80%;
+        width: 100%;
+    }
+
+    .description > p {
+        padding: 0px 28px;
     }
 
     .right {
         display: none;
     }
+
+    
+
 
     /* Nav Menu Responsiveness */
 
