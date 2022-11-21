@@ -1,12 +1,168 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Motors - Electric Golf Cart</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Motors - Electric Golf Carts</title>
 </head>
+
 <body>
-    
+    <header id="home">
+        <a href="#homemenu"><h1>Motors</h1></a>
+
+        <nav class="menu">
+            <ul class="menu-list">
+                <li><a href="#homemenu">Home</a></li>
+                <li><a href="#product">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <button>
+                <i class="fas fa-times"></i>
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <section class="main" id="homemenu">
+        <section class="left-main">
+            <p class="title">Electric Golf Carts</p>
+            <p class="msg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex nihil rerum itaque quisquam!
+                Natus repudiandae nesciunt tempora odio amet. Saepe?</p>
+                <a href="#contact">
+                    <button class="cta">Buy Now!</button>
+                </a>
+        </section>
+        <section class="right-main">
+            <img src="img/pexels-mikhail-nilov-9366557.jpg" alt="Langing image">
+        </section>
+    </section>
+
+    <section class="product" id="product">
+        <section class="card">
+            <div class="description">
+            <img src="img/onward-two-passenger-golf-cart-640x443.jpg" alt="Langing image">
+                <h2><b>For Two</b></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="#contact">
+                    <button class="cta">Buy Now!</button>
+                </a>
+              </div>
+        </section>
+        <section class="card">
+            <div class="description">
+            <img src="img/onward-lifted-four-passenger-golf-cart-640x443.jpg" alt="Langing image">
+                <h2><b>For Four</b></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="#contact">
+                    <button class="cta">Buy Now!</button>
+                </a>
+              </div>
+        </section>
+        <section class="card">
+            <div class="description">
+            <img src="img/Onward 6 Passenger.jpg" alt="Langing image">
+                <h2><b>Four Six</b></h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                <a href="#contact">
+                    <button class="cta">Buy Now!</button>
+                </a>
+              </div>
+        </section>
+    </section>
+
+    <section class="about" id="about">
+        <section class="left-about">
+            <img src="img/pexels-mikhail-nilov-9207388.jpg" alt="Langing image">
+        </section>
+        <section class="right-about">
+            <p class="title-about">About Our Team</p>
+            <p class="msg-about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan tortor et ligula tempor mollis. Phasellus sed ante facilisis nulla efficitur egestas. Quisque iaculis mi a lobortis sodales. Proin faucibus et diam nec interdum. Morbi efficitur felis id leo ornare, nec maximus dui condimentum.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan tortor et ligula tempor mollis. Phasellus sed ante facilisis nulla efficitur egestas. Quisque iaculis mi a lobortis sodales. Proin faucibus et diam nec interdum. Morbi efficitur felis id leo ornare, nec maximus dui condimentum.</p>
+        </section>
+    </section>
+
+    <section class="contact" id="contact">
+        <section class="left-contact">
+            <p class="title-contact">Contact</p>
+            <p class="msg-about">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus accumsan tortor et ligula tempor mollis.<br><br>
+            Phone: +0 00 000 0000 00<br>
+        Adress: 525 Grove Dr.<br>
+        New Port Richey, FL 34653<br></p>
+        </section>
+        <section class="right-contact">
+                <form action="#action_page(php)">
+                  <div class="row">
+                    <div class="col-75">
+                      <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-75">
+                      <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-75">
+                      <select id="country" name="country">
+                        <option value="australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="usa">USA</option>
+                        <option value="europe">Europe</option>
+                        <option value="asia">Asia</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-75">
+                      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <input type="submit" value="Submit">
+                  </div>
+                </form>
+        </section>
+    </section>
+
+    <footer>
+        <div class="lastinfo">
+            <h1>Motors</h1>
+            <p>Phone: +0 00 000 0000 00</p>
+        </div>
+    </footer>
+
+    <script>
+        var menu = document.querySelector('.menu');
+        var menuBtn = document.querySelector('.menu button');
+        menuBtn.addEventListener('click', () => {
+            menu.classList.toggle('opened')
+  })
+    </script>
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function() {myFunction()};
+
+        // Get the navbar
+        var navbar = document.getElementById("home");
+
+        // Get the offset position of the navbar
+        var sticky = navbar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function myFunction() {
+          if (window.pageYOffset >= sticky) {
+              navbar.classList.add("sticky")
+          }
+          else {
+              navbar.classList.remove("sticky");
+          }
+        }
+    </script>
 </body>
+
 </html>
