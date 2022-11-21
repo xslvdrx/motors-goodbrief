@@ -43,6 +43,9 @@ header {
     padding: 0 64px;
     font-size: 16px;
     z-index: 1;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 header h1 {
@@ -92,12 +95,7 @@ header h1 {
     text-align: center;
     text-decoration: none;
   }
-  
-  /* Page content
-  .main {
-    padding: 16px;
-  }
-   */
+   
   
   /* The sticky class is added to the navbar with JS when it reaches its scroll position */
   .sticky {
@@ -105,13 +103,7 @@ header h1 {
     top: 0;
     width: 100%;
   }
-  
-  /* 
-  Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) 
-  .sticky + .main {
-    padding-top: 60px;
-  } 
-  */
+
 
 /* ---------- main -------------*/
 
@@ -193,10 +185,6 @@ button.cta:hover {
 
 }
 
-.card {
-    padding: 5px;
-}
-
 .card img{
     background: #fff;
     width: auto;
@@ -219,6 +207,14 @@ button.cta:hover {
 
 .description > p{
     padding: 10px 10px 15px 10px;
+}
+
+.left-about img {
+    width: 100%;
+}
+
+.left-about {
+    max-width: 50%;
 }
 
 .right-about {
@@ -260,6 +256,11 @@ button.cta:hover {
     width: 100%;
     font-weight: bold;
     letter-spacing: 2px;
+}
+
+.left-contact {
+    width: 50%;
+    padding: 28px 64px;
 }
 
 .right-contact {
@@ -343,31 +344,49 @@ input[type=text], select, textarea{
 @media (max-width:480px) {
 
     .main {
-        padding: 50px 0;
+        padding: 80px 0px 0px 0px;
+        flex-direction: column-reverse;
     }
 
-    .left
-
-    .main,
-    .product {
-        flex-direction: column;
+    .right-main img {
+        width: 100%;
+    }
+    
+    .right-main {
+        max-width: 100%;
     }
 
-    .left button.cta {
+
+    .left-main {
+        padding: 32px 32px 125px;
+    }
+
+    .title {
+        color: #FF6100;
+        font-size: 3.2em;
+        width: 100%;
+        font-weight: bold;
+        letter-spacing: 2px;
+        margin-bottom: 0;
+    }
+    
+    .msg {
+        color: #9fb5cc;
+        font-size: 1.1em;
+        letter-spacing: 0.7px;
+        line-height: 28px;
+        margin-bottom: 0;
+        padding-top: 32px;
+    }
+
+    .left-main button.cta {
         display: none;
     }
 
-    .product {
-        padding: 0 10px;
-    }
-
-
-
     header,
-    footer,
-    .left {
-        padding-left: 28px;
-        padding-right: 28px;
+    footer {
+        padding-left: 32px;
+        padding-right: 32px;
     }
 
     h1 {
@@ -387,13 +406,14 @@ input[type=text], select, textarea{
     a:hover {
         color: #9fb5cc;
     }
-    .main,
-    .product {
+
+    .product,
+    .about {
         flex-direction: column;
     }
 
 
-    .left,
+    .left-main,
     .card,
     .contact {
         width: 100%;
@@ -404,28 +424,83 @@ input[type=text], select, textarea{
     }
 
 
-    .left,
+    .left-main,
     .card {
         font-size: 0.8em;
     }
 
-    .left,
+    .left-main,
     .card * {
-        margin-bottom: 32px;
         text-align: center;
     }
 
+    .product {
+        gap: 40px;
+        padding: 80px 0;
+        text-align: center;
+        color: #9fb5cc;
+        
+    }
+
+    .card {
+        padding-bottom: 42px;
+    }
 
     .card img {
         width: 100%;
     }
 
     .description > p {
-        padding: 0px 28px;
+        padding: 16px 32px;
     }
 
-    .right {
-        display: none;
+    .about,
+    .contact {
+        padding: 80px 0;
+    }
+
+    .left-about img {
+        width: 100%;
+    }
+
+    .left-about {
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .right-about {
+        width: 100%;
+        padding: 32px 32px;
+    }
+
+    .title-about {
+        color: #FF6100;
+        font-size: 1.6em;
+        width: 100%;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    .msg-about {
+        color: #9fb5cc;
+        font-size: 1em;
+        letter-spacing: 0.7px;
+        line-height: 28px;
+        margin-bottom: 0;
+    }
+
+
+    .left-contact {
+        width: 100%;
+        padding: 32px 32px;
+    }
+
+    .title-contact {
+        margin-bottom: 24px;
+    }
+
+    .right-contact {
+        width: 85%;
     }
 
     
@@ -473,12 +548,13 @@ input[type=text], select, textarea{
         right: 0;
         width: 100%;
         height: 100%;
-        background-color: #FF6100;
+        background-color: hsla(23, 100%, 50%, 0.6);
+        backdrop-filter: blur(5px);
         color: #fff;
-        padding: 46px;
+        padding: 40px;
         flex-direction: column;
         align-items: flex-end;
-        padding-top: 80px;
+        padding-top: 64px;
         transform: translateX(100%);
         transition: transform 0.5s;
     }
